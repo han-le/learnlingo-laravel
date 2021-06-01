@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage', [
+        'allPosts' => Post::latest()->with('category')->get(),
+
+    ]);
+});
+
+Route::get('/post/{post:slug}', function (Post $post) {
+    return view('post-page', [
+        'post' => $post,
+    ]);
+});
+
+Route::get('/category/{category:category_slug}', function (\App\Models\Category $category) {
+//    dd($category->postsWithSameCategory());
+    return view('homepage', [
+        'allPosts' => $category->postsWithSameCategory()->get()
+    ]);
 });
