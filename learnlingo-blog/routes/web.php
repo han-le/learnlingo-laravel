@@ -3,33 +3,34 @@
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('homepage', [
-        'allPosts' => Post::latest()->with('category')->get(),
+Route::get('/', [\App\Http\Controllers\PostController::class, 'getHomePage']);
 
-    ]);
-});
+Route::get('/search', [\App\Http\Controllers\PostController::class, 'getSearch'])->name('search-results');
 
-Route::get('/post/{post:slug}', function (Post $post) {
+Route::get('/{post:slug}', function (Post $post) {
     return view('post-page', [
         'post' => $post,
+        'allPosts' => Post::all()
     ]);
 });
 
 Route::get('/category/{category:category_slug}', function (\App\Models\Category $category) {
-//    dd($category->postsWithSameCategory());
     return view('homepage', [
         'allPosts' => $category->postsWithSameCategory()->get()
     ]);
 });
+
+Route::get('/donate', function () {
+    return view ('donate');
+});
+
+Route::get('/quick-links', function () {
+    return view ('quick-links');
+});
+
+Route::get('/test', function () {
+    return view ('test');
+});
+
+

@@ -16,4 +16,9 @@ class Post extends Model
     public function getExcerpt() {
         //todo
     }
+
+    //search
+    public function filter() {
+
+    }
 }

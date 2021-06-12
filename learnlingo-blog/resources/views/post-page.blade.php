@@ -1,11 +1,6 @@
-@extends('layout')
-
-@section('content')
-    <div style="
-        background-color: #eacfc0;
-        width: 100%;
-        height: 68px;">
-        @include('components.navbar')
+<x-layout>
+    <div class="post-page-nav">
+        <x-navbar></x-navbar>
     </div>
 
     <div class="wrap container">
@@ -15,40 +10,47 @@
                 <main class="container">
                     <div class="row">
                         <div class="entry" id="entry">
-                            <div class="feature-img">
-                                <img src="{{$post->featured_img}}" alt="feature-img" >
-                            </div>
-                            <div class="entry-container" style="padding: 10px 30px 0 30px">
-                                <div class="entry-header">
-                                    <h1 class="title-font mt-4 mb-2 text-center" style="font-size: 25px; color: #45b26e">
-                                        {{$post->post_title}}
-                                    </h1>
-                                    <div class="entry-info d-flex justify-content-center" style="color: #b2b2b2;font-size: 14px;">
-                                        <div class="me-3">Aug/16/2019</div>
-                                        <div class="me-3" >
-                                            <a href="#" style="color: #4180CB; font-weight: 600">#{{$post->category->category_name}}</a>
-                                        </div>
-                                        <div>{{$post->views}} <i class="far fa-eye"></i></div>
+                            <div class="entry-header">
+                                <h1 class="post-title">
+                                    {{$post->post_title}}
+                                </h1>
+                                <div class="entry-info d-flex justify-content-center" style="color: #b2b2b2;font-size: 14px;">
+                                    <div class="me-3">Aug/16/2019</div>
+                                    <div class="me-3" >
+                                        <a href="/category/{{ $post->category->category_slug }}" style="color: #4180CB; font-weight: 600">#{{$post->category->category_name}}</a>
                                     </div>
-                                    <hr style="opacity: 0.5">
+                                    <div>{{$post->views}} <i class="far fa-eye"></i></div>
                                 </div>
-                                <div class="entry-content" style="padding-top: 10px">
+                            </div>
+                            <div class="entry-body">
+                                <div class="featured-img">
+                                    <img src="{{$post->featured_img}}" alt="feature-img" >
+                                </div>
+                                <div class="entry-content">
                                     <h2>Định nghĩa</h2>
                                     <p>
                                         {{$post->post_content}}
                                     </p>
+                                    <p>Lorem ipsum `dolor sit` amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                        dolor in reprehenderit in voluptate velit esse cillum dolore
+                                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                        non proident, sunt in culpa qui officia deserunt mollit anim
+                                        id est laborum.</p>
                                     <h2>Ví dụ</h2>
                                     <hr style="opacity: 0.5">
                                     <ul>
-                                        <li>You need to take your mind off of it, go somewhere to blow off some steam.
+                                        <li>You need to take your mind off of it, go somewhere to blow off some steam.<br>
                                             ⇢ Cậu cần thôi suy nghĩ về chuyện đó, đi đâu giải tỏa bực tức đi.
                                         </li>
                                         <li>
-                                            You might want to loosen up a little. If you can’t find a way to let off some steam, you’re going to explode.
+                                            You might want to loosen up a little. If you can’t find a way to let off some steam, you’re going to explode.<br>
                                             ⇢ Anh nên thả lỏng một chút. Nếu anh không thể tìm được cách xả giận, anh sẽ nổ tung đó.
                                         </li>
                                         <li>
-                                            My favorite way to blow off steam is to sing loud in the shower.
+                                            My favorite way to blow off steam is to sing loud in the shower.<br>
                                             ⇢ Cách yêu thích của tôi để giải tỏa cơn giận là hát thật to trong nhà tắm.
                                         </li>
                                     </ul>
@@ -59,7 +61,7 @@
 
                                     <h2>Có nên dùng Kindle không?</h2>
                                     <p>Không có gì là hoàn hảo và một chiếc máy đọc sách Kindle cũng vậy. Đầu tiên là chi phí thiết bị khá cao để đầu tư cho việc đọc sách. Một chiếc Kindle Paperwhite 4 có giá khoảng 150$, nói chung là tầm 3 triệu. Việc sờ vào màn hình không thú bằng sờ vào trang sách giấy. Nếu bạn yêu thích việc sưu tầm các đầu sách và chưng nó ở trên kệ thì Kindle cũng không cho bạn trải nghiệm này. À, bạn cũng không thể viết lên sách được.</p>
-                                    <img src="https://learnlingo.co/wp-content/uploads/2021/03/image_1-1024x683.jpg" alt="" style="width: 100%">
+                                    <img src="https://learnlingo.co/wp-content/uploads/2021/03/image_1-1024x683.jpg">
                                     <p>
                                         Khi phía bên kia yêu cầu chuyển máy, đừng vội vàng bấm chuyển liền nhé, như thế người nghe sẽ hơi hụt hẫng một xíu đấy. Trước khi bấm nút chuyển chỉ cần lịch sự đáp lại xin chờ một chút, tôi sẽ chuyển máy cho bạn.
                                     </p>
@@ -69,9 +71,7 @@
                                     <p>Contact me: <a href="#">Some link here</a></p>
 
                                 </div>
-
                             </div>
-                            <hr style="opacity: 0.5">
                         </div>
                     </div>
                     <!----4.2.2.Related Posts-->
@@ -104,17 +104,16 @@
                 </main>
             </div>
 
-            <!-- 4.3.Sidebar-->
+            <!-- Sidebar-->
             <aside class="sidebar col-md-5 col-lg-4">
                 <div class="sidebar-inside">
-                    @include('components.sidebar-top-post')
-                    @include('components.sidebar-follow')
-                    @include('components.sidebar-must-read')
+                    <x-sidebar-must-read :allPosts="$allPosts"></x-sidebar-must-read>
                     <x-sidebar-follow></x-sidebar-follow>
+                    <x-sidebar-top-post></x-sidebar-top-post>
                 </div>
             </aside>
         </div>
     </div>
 
     <x-post-highlight></x-post-highlight>
-@endsection
+</x-layout>

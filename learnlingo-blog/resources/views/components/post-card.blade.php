@@ -3,7 +3,7 @@
 <div class="col-sm-6 mb-5">
     <div class="latest-post-article card box_shadow h-100">
         <div class="article-thumbnail">
-            <a href="/post/{{$post->slug}}">
+            <a href="/{{$post->slug}}">
                 <img src="{{$post->featured_img}}"
                      class="card-img-top" alt="featured-image">
             </a>
@@ -14,7 +14,7 @@
                     <span class="category-pill">{{$post->category->category_name}}</span>
                 </a>
             </div>
-            <a href="/post/{{$post->slug}}">
+            <a href="/{{$post->slug}}">
                 <h2 class="title-font card-title">{{$post->post_title}}</h2>
                 <p class="card-text">
                     {{$post->excerpt}}
@@ -23,7 +23,7 @@
         </div>
         <div class="article-footer card-footer">
             <div class="footer_inside">
-                <a href="/post/{{$post->slug}}">
+                <a href="{{$post->slug}}">
                     <span>Read more</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                          fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
