@@ -15,6 +15,10 @@
                             <x-post-card :post="$item"></x-post-card>
                         @endforeach
                     </div>
+
+                    <div class="pagination_ row">
+                        {{$allPosts->links()}}
+                    </div>
                 </main>
             </div>
 

@@ -8,12 +8,16 @@ use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
-    function getHomePage(Request $request) {
-
+    function index() {
         //Get all the posts in desc of time + load all category to solve the N+1 Query problem
-        $posts = Post::latest()->with('category');
+        $posts = Post::latest()
+            ->with('category')
+            ->paginate(4);
 
-        return view('homepage', ['allPosts' => $posts->get()]);
+        //return view('homepage', ['allPosts' => $posts->get()]);
+
+        //Pagination. By default: 15 item per page
+        return view('homepage', ['allPosts' => $posts]);
     }
 
     function getSearch (Request $request) {
