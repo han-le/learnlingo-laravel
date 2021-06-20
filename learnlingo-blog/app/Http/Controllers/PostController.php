@@ -12,9 +12,7 @@ class PostController extends Controller
         //Get all the posts in desc of time + load all category to solve the N+1 Query problem
         $posts = Post::latest()
             ->with('category')
-            ->paginate(4);
-
-        //return view('homepage', ['allPosts' => $posts->get()]);
+            ->paginate(10);
 
         //Pagination. By default: 15 item per page
         return view('homepage', ['allPosts' => $posts]);

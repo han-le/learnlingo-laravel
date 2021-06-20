@@ -35,7 +35,7 @@
     font-size: 14px;
     color: #6c6f76;
     transition: none;
-    background-color: transparent;
+    background-color: #7cb9e578;
 }
 .header-nav .header__search input:focus {
     outline: none;

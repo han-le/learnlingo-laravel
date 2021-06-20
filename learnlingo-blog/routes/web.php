@@ -10,7 +10,7 @@ Route::get('/search', [\App\Http\Controllers\PostController::class, 'getSearch']
 
 Route::get('/category/{category:category_slug}', function (\App\Models\Category $category) {
     return view('homepage', [
-        'allPosts' => $category->postsWithSameCategory()->paginate(4)
+        'allPosts' => $category->postsWithSameCategory()->paginate(10)
     ]);
 })->name('category');
 
@@ -26,6 +26,15 @@ Route::get('/test', function () {
     return view ('test');
 });
 
+// Put the
+Route::get('register', function () {
+    return view('register.create');
+});
+
+Route::post('register', function () {
+    return ("We have received your information");
+});
+
 //Put this at the end
 Route::get('/{post:slug}', function (Post $post) {
     return view('post-page', [
@@ -33,3 +42,5 @@ Route::get('/{post:slug}', function (Post $post) {
         'allPosts' => Post::all()
     ]);
 });
+
+

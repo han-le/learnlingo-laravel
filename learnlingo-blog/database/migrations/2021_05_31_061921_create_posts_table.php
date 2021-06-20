@@ -16,7 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
-            $table->string('featured_img')->default('https://picsum.photos/id/1040/600/400');
+            $table->string('featured_img')->default('https://learnlingo.co/wp-content/uploads/2021/06/lift-the-spirit_-1.png');
             $table->string('post_title');
             $table->string('slug')->unique();
             $table->text("excerpt");

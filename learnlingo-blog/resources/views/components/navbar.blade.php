@@ -13,9 +13,6 @@
             <!--1.2.Menu-->
             <ul class="header__menu navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">Idioms</a>
                 </li>
                 <li class="nav-item">
@@ -38,7 +35,7 @@
         </div>
 
         <!-- Search-->
-        <div>
+        <div class="d-flex">
             <form class="header__search d-flex"
                   method="GET"
                   action="{{ route('search-results') }}"
@@ -56,6 +53,11 @@
                     </svg>
                 </button>
             </form>
+            <div>
+                <button type="button" class="btn btn-warning">
+                    <a href="/register">Sign up</a>
+                </button>
+            </div>
         </div>
     </div>
 </nav>

@@ -36,3 +36,5 @@
     <x-post-highlight />
 
 </x-layout>
+
+forminput
