@@ -4,6 +4,11 @@
         <x-header />
     </div>
 
+    <!-- Show the message of successfully created account-->
+    @if(session()->has('x'))
+        <x-flash />
+    @endif
+
     <div class="wrap container">
         <div class="site-main row">
 

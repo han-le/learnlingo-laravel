@@ -12,8 +12,7 @@ class RegisterController extends Controller
         return view('register.create');
     }
 
-    public function show() {
-
+    public function store() {
         //return(request()->all());
         //validation
         $x = request()->validate([
@@ -28,9 +27,14 @@ class RegisterController extends Controller
         //Fail validation
 
         //Create a user:
-        User::create($x);
+        $y = User::create($x);
 
+        //log the user in
+        auth()->login($y);
+
+        //Show successful message
+        session()->flash('x', 'Your account was created successfully');
         //Redirect after submit
-        dd('created successfullyNe');
+        return redirect('/');
     }
 }

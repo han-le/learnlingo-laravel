@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -26,10 +28,16 @@ Route::get('/test', function () {
     return view ('test');
 });
 
-// Register 
-Route::get('register', [ \App\Http\Controllers\RegisterController::class, 'create']);
+// Register
+Route::get('register', [ RegisterController::class, 'create'])->middleware('guest');
 
-Route::post('register',[ \App\Http\Controllers\RegisterController::class, 'show']);
+Route::post('register', [ RegisterController::class, 'store']);
+
+//Log out
+Route::post('logout', [ SessionController::class, 'destroy']);
+
+//Log in
+
 
 //Put this at the end
 Route::get('/{post:slug}', function (Post $post) {

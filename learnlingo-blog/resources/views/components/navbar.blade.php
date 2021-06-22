@@ -53,11 +53,39 @@
                     </svg>
                 </button>
             </form>
-            <div>
-                <button type="button" class="btn btn-warning">
-                    <a href="/register">Sign up</a>
-                </button>
-            </div>
+
+            @auth
+                <!-- Only show this if the user is logged in-->
+                <div class="dropdown">
+                    <button
+                        class="btn btn-primary dropdown-toggle"
+                        type="button"
+                        id="drop_down"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        data-bs-offset="40,50"
+                    >
+                        <span> Hi, {{ auth()->user()->name }}</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="drop_down">
+                        <li>
+                            <div class="dropdown-item">
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    <button type="submit">Sign out</button>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            @else
+                <!-- Only show this if the user is a guest-->
+                <div>
+                    <button type="button" class="btn btn-warning">
+                        <a href="/register">Sign up</a>
+                    </button>
+                </div>
+            @endauth
         </div>
     </div>
 </nav>
