@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@700;900&family=Montserrat:wght@700;800&family=DM+Sans&display=swap"
-          rel="stylesheet">
 
     <!-- Customized CSS -->
     <link rel="stylesheet" href="/global-style.css">

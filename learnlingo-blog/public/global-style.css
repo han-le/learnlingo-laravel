@@ -53,9 +53,7 @@ hr {
 }
 
 .handwriting-font {
-    text-transform: uppercase;
-    font-family: "Grandstander", cursive;
-    letter-spacing: 2px;
+    font-family: "hanfont", cursive;
 }
 
 .dashed-border {

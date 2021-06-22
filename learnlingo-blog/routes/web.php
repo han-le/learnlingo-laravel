@@ -26,14 +26,10 @@ Route::get('/test', function () {
     return view ('test');
 });
 
-// Put the
-Route::get('register', function () {
-    return view('register.create');
-});
+// Register 
+Route::get('register', [ \App\Http\Controllers\RegisterController::class, 'create']);
 
-Route::post('register', function () {
-    return ("We have received your information");
-});
+Route::post('register',[ \App\Http\Controllers\RegisterController::class, 'show']);
 
 //Put this at the end
 Route::get('/{post:slug}', function (Post $post) {

@@ -51,15 +51,17 @@
 }
 
 .site-header .header__logo h1 {
-    font-family: "FS Core Magic Rough", sans-serif;
+    text-transform: uppercase;
+    font-family: "hanfont", sans-serif;
     font-weight: 900;
-    font-size: 53px;
+    font-size: 70px;
     letter-spacing: 3px;
     color: #7a5933;
 }
 
 .site-header .tagline {
-    font-family: "DM Sans", sans-serif;
+    font-family: "hanfont", sans-serif;
+    font-size: 20px;
     margin-top: 15px;
     color: #7a5933;
 }
@@ -143,7 +145,7 @@
 .sidebar .sidebar-inside .sidebar-section h2 {
     color: #161d2e;
     font-weight: 900;
-    font-size: 25px;
+    font-size: 33px;
     margin-bottom: 25px;
     margin-top: 10px;
 }
@@ -261,7 +263,7 @@
 .highlights .post-list-section ul .post-list-item a h3,
 .highlights .post-list-section ul .post-list-item a .h3 {
     font-size: 17px;
-    font-weight: 600;
+    font-weight: 300;
     color: #161d2e;
 }
 
