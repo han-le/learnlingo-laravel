@@ -36,10 +36,8 @@ Route::post('register', [ RegisterController::class, 'store'])->middleware('gues
 Route::post('logout', [ SessionController::class, 'destroy']);
 
 //Log in
-//Route::get('login', [SessionController::class, 'create'])->middleware('guest');
-Route::get('login', function () {
-    return view('sessions.create');
-});
+Route::get('login', [SessionController::class, 'create'])->middleware('guest');
+Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
 //Put this at the end
 Route::get('/{post:slug}', function (Post $post) {

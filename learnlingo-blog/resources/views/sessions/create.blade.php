@@ -28,6 +28,9 @@
                     <div class="text-center mt-5">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
+                    <div class="text-center mt-5">
+                        <a href="/">Back to homepage</a>
+                    </div>
                 </form>
             </div>
         </div>
