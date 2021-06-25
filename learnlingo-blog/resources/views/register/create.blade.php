@@ -3,7 +3,7 @@
         <div class="row">
             <h1 class="text-center handwriting-font mt-5 mb-5">Register</h1>
             <div class="col-10 col-md-6 col-lg-4" style="margin: 0 auto">
-
+                {{-- Register form --}}
                 <form method="POST" action="/register">
 
                     <!-- Block teh Cross-site request forgery -->

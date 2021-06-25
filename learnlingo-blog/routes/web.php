@@ -30,14 +30,16 @@ Route::get('/test', function () {
 
 // Register
 Route::get('register', [ RegisterController::class, 'create'])->middleware('guest');
-
-Route::post('register', [ RegisterController::class, 'store']);
+Route::post('register', [ RegisterController::class, 'store'])->middleware('guest');
 
 //Log out
 Route::post('logout', [ SessionController::class, 'destroy']);
 
 //Log in
-
+//Route::get('login', [SessionController::class, 'create'])->middleware('guest');
+Route::get('login', function () {
+    return view('sessions.create');
+});
 
 //Put this at the end
 Route::get('/{post:slug}', function (Post $post) {
