@@ -75,7 +75,7 @@
                         <div class="dropdown-item">
                             <form action="/logout" method="POST">
                                 @csrf
-                                <button type="submit">Sign out</button>
+                                <button type="submit" class="btn">Sign out</button>
                             </form>
                         </div>
                     </li>

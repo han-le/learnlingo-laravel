@@ -23,11 +23,20 @@ class SessionController extends Controller
 
         // If authentication fails
         if (!Auth::attempt($userCredentials)) {
-            dd('wrong email or password');
+
+            // back(): Create a new redirect response to the previous location (log in form)
+            // withErrors(): Flash a container of errors to the session
+            // withInput(): Keep the user input
+            return back()->withInput()->withErrors([
+                'email' => 'Wrong email or password',
+                'password' => 'Wrong email or password'
+            ]);
         }
 
-        //dd('you are logged in');
-        return redirect('/');
+        // Generate a new session identifier to prevent session fixation
+        session()->regenerate();
+
+        return redirect('/')->with('success', 'You are logged in successfully');
     }
 
     public function destroy() {
