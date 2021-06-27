@@ -74,7 +74,8 @@
                             </div>
                         </div>
                     </div>
-                    <!----4.2.2.Related Posts-->
+                    <!-- Related Posts -->
+
                     <div class="related-posts d-flex justify-content-between row">
                         <div class="col-12 col-sm-5 col-lg-4 d-flex box_shadow" style="background: white; padding: 18px">
                             <div class="center" style="border-right: 1px #00000012 solid; padding-right: 16px;">
@@ -101,6 +102,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <x-comment/>
+                    </div>
+
                 </main>
             </div>
 
