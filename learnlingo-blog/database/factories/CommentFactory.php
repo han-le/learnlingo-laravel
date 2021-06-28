@@ -23,10 +23,9 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            'id' => $this->faker,
             'post_id' => Post::factory(),
             'comment_author' => $this->faker->name(),
-            'comment_author_email' => $this->faker->email,
+            'comment_author_email' => $this->faker->email(),
             'comment_content' => $this->faker->sentence(),
             'comment_approved' => $this->faker->boolean(),
         ];

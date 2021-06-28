@@ -104,7 +104,8 @@
                     </div>
 
                     <div class="row">
-                        <x-comment/>
+                        <!-- Pass in the array of comment list -->
+                        <x-comment :allComments="$post->comment"/>
                     </div>
 
                 </main>

@@ -24,7 +24,7 @@ class PostFactory extends Factory
     {
         return [
             'category_id' => Category::factory(),
-            'post_title' => $this->faker->text(10),
+            'post_title' => $this->faker->text(100),
             'slug' => $this->faker->slug(),
             "excerpt" => $this->faker->text(),
             'post_content'=> $this->faker->paragraph(),

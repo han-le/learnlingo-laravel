@@ -1,3 +1,10 @@
+<!-- Receive the list of comments from post-page.blade.php -->
+@props(['allComments'])
+
+@foreach( $allComments as $comment)
+    <p>{{$comment->comment_content}}</p>
+@endforeach
+
 <div class="blog-comment mt-5">
     <h2 class="handwriting-font">Comments</h2>
     <hr/>
@@ -5,14 +12,14 @@
         <li class="comment">
             <div class="comment-item">
                 <div class="comment-img">
-                    <img src="https://i.pinimg.com/474x/a1/9d/fd/a19dfd0cd5b84390c983b372c91b7f22.jpg" class="avatar" alt="avatar">
+                    <img src="https://i.pinimg.com/236x/ea/01/c9/ea01c9b8e3ab765f04694550f7ac530f.jpg" class="avatar" alt="avatar">
                 </div>
                 <div class="comment-content">
                     <div class="meta">
                         <div>
                             <span class="comment-name">Tina</span>
                             <span>on</span>
-                            <span>Dec 18, 2014: </span>
+                            <span>Dec 18, 2021: </span>
                         </div>
                         <div>
                             <i class="fas fa-reply"></i>
@@ -20,8 +27,12 @@
                         </div>
                     </div>
                     <p>
-                        We hug and yes, we make love
-                        And always just say "Goodnight"
+                        Boy, you write your name, I can do the same
+                        Ooh, I love the taste, la-la-la-la
+                        All on my tongue, I want it (la-la-la-la)
+                        Boy, you write your name, I can do the same
+                        Ooh, I love the taste, la-la-la-la-la
+                        All on my tongue, I want it
                     </p>
                 </div>
             </div>
@@ -29,7 +40,7 @@
         <li class="comment">
             <div class="comment-item">
                 <div class="comment-img">
-                    <img src="https://i.pinimg.com/474x/a1/9d/fd/a19dfd0cd5b84390c983b372c91b7f22.jpg" class="avatar" alt="avatar">
+                    <img src="https://i.pinimg.com/236x/ea/01/c9/ea01c9b8e3ab765f04694550f7ac530f.jpg" class="avatar" alt="avatar">
                 </div>
                 <div class="comment-content">
                     <div class="meta">
@@ -49,57 +60,60 @@
                     </p>
                 </div>
             </div>
+            <ul class="comment-reply comments-list">
+                <li class="comment">
+                    <div class="comment-item">
+                        <div class="comment-img">
+                            <img src="https://i.pinimg.com/236x/ea/01/c9/ea01c9b8e3ab765f04694550f7ac530f.jpg" class="avatar" alt="avatar">
+                        </div>
+                        <div class="comment-content">
+                            <div class="meta">
+                                <div>
+                                    <span class="comment-name">Tina</span>
+                                    <span>on</span>
+                                    <span>Dec 18, 2014: </span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-reply"></i>
+                                    <a href="#"><small>Reply</small></a>
+                                </div>
+                            </div>
+                            <p>
+                                I, I feel like fuckin' somethin'
+                                But we could be corny, fuck it
+                                Sugar, I ain't no dummy, dummy
+                                I like to say, what if, but if
+                                We could kiss and just cut the rubbish
+                                Then I might be on to somethin'
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </li>
-        <ul class="comment-reply comments-list">
+        @foreach( $allComments as $comment)
             <li class="comment">
                 <div class="comment-item">
                     <div class="comment-img">
-                        <img src="https://i.pinimg.com/474x/a1/9d/fd/a19dfd0cd5b84390c983b372c91b7f22.jpg" class="avatar" alt="avatar">
+                        <img src="https://i.pinimg.com/564x/b9/3b/a4/b93ba4e78ec0bdd7e6e13b9fab2a0f03.jpg" class="avatar" alt="avatar">
                     </div>
                     <div class="comment-content">
                         <div class="meta">
                             <div>
-                                <span class="comment-name">Tina</span>
+                                <span class="comment-name">{{$comment->comment_author}}</span>
                                 <span>on</span>
-                                <span>Dec 18, 2014: </span>
+                                <span>{{$comment->created_at}}</span>
                             </div>
                             <div>
                                 <i class="fas fa-reply"></i>
                                 <a href="#"><small>Reply</small></a>
                             </div>
                         </div>
-                        <p>
-                            We hug and yes, we make love
-                            And always just say "Goodnight"
-                        </p>
+                        <p>{{$comment->comment_content}}</p>
                     </div>
                 </div>
             </li>
-        </ul>
-        <li class="comment">
-            <div class="comment-item">
-                <div class="comment-img">
-                    <img src="https://i.pinimg.com/474x/a1/9d/fd/a19dfd0cd5b84390c983b372c91b7f22.jpg" class="avatar" alt="avatar">
-                </div>
-                <div class="comment-content">
-                    <div class="meta">
-                        <div>
-                            <span class="comment-name">Tina</span>
-                            <span>on</span>
-                            <span>Dec 18, 2014: </span>
-                        </div>
-                        <div>
-                            <i class="fas fa-reply"></i>
-                            <a href="#"><small>Reply</small></a>
-                        </div>
-                    </div>
-                    <p>
-                        We hug and yes, we make love
-                        And always just say "Goodnight"
-                    </p>
-                </div>
-            </div>
-        </li>
+        @endforeach
     </ul>
 
     <!-- Comment form -->

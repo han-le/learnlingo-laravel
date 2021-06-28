@@ -21,4 +21,9 @@ class Post extends Model
     public function filter() {
 
     }
+
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
